@@ -47,13 +47,12 @@ public partial class BlazorEasyDialog : ComponentBase
 
     }
 
-    private async Task CancelDialog()
+    private async Task CancelDialogAsync()
     {
-        ShowDialog = false;
         if(SubmitDialog.HasDelegate)
             await SubmitDialog.InvokeAsync(false)
                 .ConfigureAwait(false);
-        this.StateHasChanged();
+        ShowDialog = false;
     }
 
     private void OnOverlayClicked()

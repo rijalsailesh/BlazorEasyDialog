@@ -3,6 +3,7 @@
 <button class="btn btn-primary" @onclick="()=>ShowDialog =true">Open</button>
 
 <BlazorEasyDialog ShowDialog="ShowDialog" 
+                  SubmitDialog="@OnSubmit"
                   DismissOnOverlayClick="true" 
                   HeaderTitle="Dialog Title" >
     <DialogBody>

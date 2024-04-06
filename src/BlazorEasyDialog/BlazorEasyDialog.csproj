@@ -4,8 +4,12 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <Title>BlazorEasyDialog</Title>
+        <Authors>Sailesh Rijal</Authors>
+        <Version>1.0.0</Version>
+        <Description>BlazorEasyDialog is a lightweight and easy-to-use dialog component for Blazor applications, completely free from JavaScript dependencies.</Description>
+        <PackageOutputPath>D:\Nuget</PackageOutputPath>
     </PropertyGroup>
-
 
     <ItemGroup>
         <SupportedPlatform Include="browser"/>

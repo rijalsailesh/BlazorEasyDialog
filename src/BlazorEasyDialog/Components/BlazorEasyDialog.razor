@@ -51,7 +51,7 @@
                         }
                         @if (ShowSecondaryButton)
                         {
-                            <button disabled="@DisableSecondaryButton" @onclick="@CancelDialog" class="easy-dialog-btn" style="background-color: @SecondaryButtonColor;">
+                            <button disabled="@DisableSecondaryButton" @onclick="@CancelDialogAsync" class="easy-dialog-btn" style="background-color: @SecondaryButtonColor;">
                                 @SecondaryButtonText
                             </button>
                         }
