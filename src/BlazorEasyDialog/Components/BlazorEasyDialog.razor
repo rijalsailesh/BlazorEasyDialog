@@ -1,0 +1,157 @@
+﻿@if (ShowDialog)
+{
+    <div class="easy-dialog-parent-container" id="@Id">
+        @if (ShowOverlay)
+        {
+            <div class="easy-dialog-overlay" @onclick="@OnOverlayClicked" style="background-color: @OverlayBackgroundColor;"></div>
+        }
+        <div class="easy-dialog" style="width: @Width; min-width: @MinWidth;">
+            @if (ShowHeader)
+            {
+                @if (HeaderTemplate is not null)
+                {
+                    @HeaderTemplate
+                }
+                else
+                {
+                    <div class="easy-dialog-header" style="background-color: @HeaderBackgroundColor">
+                        <div class="easy-dialog-title-container">
+                            @if (HeaderTitleTemplate is not null)
+                            {
+                                @HeaderTitleTemplate
+                            }
+                            else
+                            {
+                                <h5 class="header-title">@HeaderTitle</h5>
+                            }
+                        </div>
+                        <div class="easy-dialog-close-btn-container">
+                            <i class="fa fa-multiply" @onclick="@DismissDialog"></i>
+                        </div>
+                    </div>
+                }
+            }
+            <div class="easy-dialog-body" style="min-height: @MinHeight; max-height: @MaxHeight; height: @Height; max-width: @MaxHeight">
+                @DialogBody
+            </div>
+            @if (ShowFooter)
+            {
+                @if (FooterTemplate is not null)
+                {
+                    @FooterTemplate
+                }
+                else
+                {
+                    <div class="easy-dialog-footer">
+                        @if (ShowPrimaryButton)
+                        {
+                            <button disabled="@DisablePrimaryButton" @onclick="@OnSubmitDialogAsync" class="easy-dialog-btn" style="background-color: @PrimaryButtonColor;">
+                                @PrimaryButtonText
+                            </button>
+                        }
+                        @if (ShowSecondaryButton)
+                        {
+                            <button disabled="@DisableSecondaryButton" @onclick="@CancelDialog" class="easy-dialog-btn" style="background-color: @SecondaryButtonColor;">
+                                @SecondaryButtonText
+                            </button>
+                        }
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+
+<style>
+    @@media screen and (max-width: @Width) {
+        .easy-dialog{
+            width: 96%!important;
+        }
+    }
+</style>
+
+
+<style>
+    @@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
+    
+    .easy-dialog-parent-container{
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    
+    .easy-dialog-overlay{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 101;
+    }
+    
+    .easy-dialog{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 102;
+        transform: translate(-50%,-50%);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    
+    .easy-dialog-header{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        min-height: 40px;
+        padding: 10px;
+    }
+    
+    .easy-dialog-header .header-title{
+        color: white;
+        margin-bottom: 0;
+    }
+    
+    .easy-dialog-header .easy-dialog-title-container{
+        flex-grow: 1;
+    }
+    
+    .easy-dialog-close-btn-container i{
+        color: white;
+        cursor: pointer;
+    }
+    
+    .easy-dialog-body{
+        padding: 10px;
+        background-color: white;
+        overflow: auto;
+    }
+    
+    .easy-dialog-footer{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: end;
+        min-height: 40px;
+        background-color: white;
+        padding: 10px;
+        border-top: 1px solid lightgrey;
+    }
+    
+    .easy-dialog-btn{
+        border: none;
+        outline: none;
+        color: white;
+        border-radius: 5px;
+        padding: 2px 6px;
+    }
+    
+    .easy-dialog-btn:disabled{
+        opacity: 0.8;
+        cursor: not-allowed;
+    }
+</style>

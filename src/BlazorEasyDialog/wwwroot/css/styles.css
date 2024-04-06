@@ -1,0 +1,50 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
+
+.easy-dialog-parent-container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.easy-dialog-overlay{
+    height: 100vh;
+    width: 100vw;
+}
+
+.easy-dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.easy-dialog-header{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    min-height: 50px;
+    padding: 10px;
+}
+
+.easy-dialog-header .easy-dialog-title-container{
+    flex-grow: 1;
+}
+
+.easy-dialog-close-btn-container i{
+    color: white;
+}
+
+.easy-dialog-body{
+    padding: 10px;
+}
+
+.easy-dialog-footer{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
