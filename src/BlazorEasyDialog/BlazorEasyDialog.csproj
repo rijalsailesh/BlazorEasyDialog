@@ -6,8 +6,15 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Title>BlazorEasyDialog</Title>
         <Authors>Sailesh Rijal</Authors>
-        <Version>1.0.0</Version>
-        <Description>BlazorEasyDialog is a lightweight and easy-to-use dialog component for Blazor applications, completely free from JavaScript dependencies.</Description>
+        <Description>BlazorEasyDialog is a lightweight and customizable dialog component for Blazor applications. Easily integrate modal dialogs into your Blazor projects without any JavaScript dependencies. Customize the appearance and behavior of your dialogs to suit your application's needs.</Description>
+        <Copyright>©2024 Sailesh Rijal</Copyright>
+        <PackageProjectUrl>https://github.com/saileshrijal/BlazorEasyDialog</PackageProjectUrl>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/saileshrijal/BlazorEasyDialog/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/saileshrijal/BlazorEasyDialog</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>dialog, blazor-dialog, easy-blazor-dialog, blazor-modal</PackageTags>
+        <PackageReleaseNotes>No specific release notes provided for this version.</PackageReleaseNotes>
+        <PackageIcon>BlazorEasyDialog.png</PackageIcon>
         <PackageOutputPath>D:\Nuget</PackageOutputPath>
     </PropertyGroup>
 
@@ -17,6 +24,13 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="BlazorEasyDialog.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>
