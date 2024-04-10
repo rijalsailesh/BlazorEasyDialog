@@ -52,7 +52,7 @@ BlazorEasyDialog is a simple, JavaScript-free dialog component for Blazor applic
 <p>@TextValue</p>
 <button class="btn btn-primary" @onclick="()=>ShowDialog =true">Open</button>
 
-<BlazorEasyDialog ShowDialog="ShowDialog" 
+<BlazorEasyDialog @bind-Visibility="ShowDialog" 
                   SubmitDialog="@OnSubmit"
                   HeaderBackgroundColor="red"
                   HeaderTitle="Dialog Title" >
