@@ -1,11 +1,11 @@
-﻿@if (ShowDialog)
+﻿@if (Visibility)
 {
     <div class="easy-dialog-parent-container" id="@Id">
         @if (ShowOverlay)
         {
-            <div class="easy-dialog-overlay" @onclick="@OnOverlayClicked" style="background-color: @OverlayBackgroundColor;"></div>
+            <div class="easy-dialog-overlay" @onclick="@OnOverlayClickedAsync" style="background-color: @OverlayBackgroundColor;"></div>
         }
-        <div class="easy-dialog" style="width: @Width; min-width: @MinWidth;">
+        <div class="easy-dialog">
             @if (ShowHeader)
             {
                 @if (HeaderTemplate is not null)
@@ -25,13 +25,16 @@
                                 <h5 class="header-title">@HeaderTitle</h5>
                             }
                         </div>
-                        <div class="easy-dialog-close-btn-container">
-                            <i class="fa fa-multiply" @onclick="@DismissDialog"></i>
-                        </div>
+                        @if (ShowCloseButton)
+                        {
+                            <div class="easy-dialog-close-btn-container">
+                                <i class="fa fa-multiply" @onclick="@DismissDialogAsync"></i>
+                            </div>
+                        }
                     </div>
                 }
             }
-            <div class="easy-dialog-body" style="min-height: @MinHeight; max-height: @MaxHeight; height: @Height; max-width: @MaxHeight">
+            <div class="easy-dialog-body" style="width: @Width; min-width: @MinWidth; min-height: @MinHeight; max-height: @MaxHeight; height: @Height; max-width: @MaxWidth;">
                 @DialogBody
             </div>
             @if (ShowFooter)

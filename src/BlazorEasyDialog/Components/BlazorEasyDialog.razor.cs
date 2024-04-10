@@ -4,12 +4,13 @@ namespace BlazorEasyDialog.Components;
 
 public partial class BlazorEasyDialog : ComponentBase
 {
-    [Parameter] public bool ShowDialog { get; set; }
+    [Parameter] public bool Visibility { get; set; }
+    [Parameter] public EventCallback<bool> VisibilityChanged { get; set; }
     [Parameter] public string Id { get; set; } = Guid.NewGuid().ToString();
     [Parameter] public string? HeaderTitle { get; set; }
-    [Parameter] public string? HeaderTitleTemplate { get; set; }
+    [Parameter] public RenderFragment? HeaderTitleTemplate { get; set; }
     [Parameter] public RenderFragment? HeaderTemplate { get; set; }
-    [Parameter] public bool ShowCloseButton { get; set; }
+    [Parameter] public bool ShowCloseButton { get; set; } = true;
     [Parameter] public bool ShowHeader { get; set; } = true;
     [Parameter] public bool ShowOverlay { get; set; } = true;
     [Parameter] public bool ShowFooter { get; set; } = true;
@@ -34,9 +35,10 @@ public partial class BlazorEasyDialog : ComponentBase
     [Parameter] public string SecondaryButtonColor { get; set; } = "#c61938";
     [Parameter] public EventCallback<bool> SubmitDialog { get; set; }
 
-    public void DismissDialog()
+    public async Task DismissDialogAsync()
     {
-        ShowDialog = false;
+        await VisibilityChanged.InvokeAsync(false)
+            .ConfigureAwait(false);
     }
 
     private async Task OnSubmitDialogAsync()
@@ -44,7 +46,9 @@ public partial class BlazorEasyDialog : ComponentBase
         if (SubmitDialog.HasDelegate)
             await SubmitDialog.InvokeAsync(true)
                 .ConfigureAwait(false);
-
+        else
+            await VisibilityChanged.InvokeAsync(false)
+                .ConfigureAwait(false);
     }
 
     private async Task CancelDialogAsync()
@@ -52,12 +56,15 @@ public partial class BlazorEasyDialog : ComponentBase
         if(SubmitDialog.HasDelegate)
             await SubmitDialog.InvokeAsync(false)
                 .ConfigureAwait(false);
-        ShowDialog = false;
+        else
+            await VisibilityChanged.InvokeAsync(false)
+                .ConfigureAwait(false);
     }
 
-    private void OnOverlayClicked()
+    private async Task OnOverlayClickedAsync()
     {
         if(DismissOnOverlayClick)
-            DismissDialog();
+            await DismissDialogAsync()
+                .ConfigureAwait(false);
     }
 }
