@@ -1,0 +1,87 @@
+@page "/Installation"
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Installation</h2>
+    </div>
+    <div class="card-body">
+        <div class="mb-2">
+            <h5>1. Add the nuget package in your Blazor project</h5>
+            <div>
+                <pre class="language-javascript">
+<code class="language-javascript">> dotnet add package BlazorDialog
+OR
+PM> Install-Package BlazorDialog
+</code>
+</pre>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <h5>2. Add css link in head of index.html</h5>
+            <div>
+                <pre class="language-css">
+<code class="language-css">&lt;link rel="stylesheet" href="_content/BlazorEasyDialog/css/styles.css"&gt;
+</code>
+</pre>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <h5>3. Add the following line in your _Imports.razor</h5>
+            <div>
+                <pre class="language-javascript">
+<code class="language-javascript">
+@@using BlazorEasyDialog.Components
+</code>
+</pre>
+            </div>
+        </div>
+
+        <div>
+            <h5>4. Example</h5>
+            <p class="mb-0">Home.razor</p>
+            <div>
+                <pre class="language-javascript">
+        <code class="language-javascript">
+@@page "/"
+
+&lt;p&gt;@@TextValue&lt;/p&gt;
+&lt;button class="btn btn-primary" @@onclick="()=>ShowDialog =true"&gt;Open&lt;/button&gt;
+
+&lt;BlazorEasyDialog @@bind-Visibility="ShowDialog" 
+                  SubmitDialog="@@nSubmit"
+                  HeaderBackgroundColor="red"
+                  HeaderTitle="Dialog Title">
+    &lt;DialogBody>
+        &lt;p&gt;This is a dialog body!!&lt;/p&gt;
+    &lt;/DialogBody&gt;
+&lt;/BlazorEasyDialog></code>
+        </pre>
+            </div>
+
+            <p class="mb-0">Home.razor.cs</p>
+            <div>
+                <pre class="language-javascript">
+                    <code class="language-javascript">
+                    @@using Microsoft.AspNetCore.Components;
+
+namespace BlazorEasyDialog.Sample.Pages;
+
+public partial class Home : ComponentBase
+{
+    public string TextValue { get; set; }
+    public bool ShowDialog { get; set; }
+
+    private void OnSubmit(bool isSuccess)
+    {
+        TextValue = isSuccess ? "Success" : "Not success";
+        ShowDialog = false;
+    }
+}</code>
+                    </pre>
+            </div>
+        </div>
+
+    </div>
+</div>
