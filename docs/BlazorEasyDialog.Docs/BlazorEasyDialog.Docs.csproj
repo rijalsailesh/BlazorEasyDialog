@@ -12,7 +12,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\BlazorEasyDialog\BlazorEasyDialog.csproj" />
+      <ProjectReference Include="..\..\src\BlazorEasyDialog\BlazorEasyDialog.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
     </ItemGroup>
 
 </Project>

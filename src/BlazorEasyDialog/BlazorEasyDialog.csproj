@@ -30,7 +30,6 @@
     <ItemGroup>
       <None Update="BlazorEasyDialog.png">
         <Pack>True</Pack>
-        <PackagePath></PackagePath>
       </None>
     </ItemGroup>
 

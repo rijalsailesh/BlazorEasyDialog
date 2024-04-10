@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEasyDialog", "src\Bla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEasyDialog.Sample", "samples\BlazorEasyDialog.Sample\BlazorEasyDialog.Sample.csproj", "{C35EAAD5-4F08-4CFF-AE10-AE1723337022}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEasyDialog.Docs", "BlazorEasyDialog.Docs\BlazorEasyDialog.Docs.csproj", "{FA56652D-090C-4180-B0BF-5E1B52955511}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEasyDialog.Docs", "docs\BlazorEasyDialog.Docs\BlazorEasyDialog.Docs.csproj", "{FA56652D-090C-4180-B0BF-5E1B52955511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
