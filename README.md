@@ -27,14 +27,8 @@ BlazorEasyDialog is a simple, JavaScript-free dialog component for Blazor applic
   <link rel="stylesheet" href="_content/BlazorEasyDialog/css/styles.css">
 
 ```  
-**3. Add css link in the head of index.html**
 
-  ```bash
-  <link rel="stylesheet" href="_content/BlazorEasyDialog/css/styles.css">
-
-```  
-
-**4. Add the following line in your _Imports.razor**
+**3. Add the following line in your _Imports.razor**
 
   ```bash
   @using BlazorEasyDialog.Components
