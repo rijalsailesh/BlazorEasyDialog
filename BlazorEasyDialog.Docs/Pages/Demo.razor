@@ -1,0 +1,188 @@
+﻿@page "/"
+<div class="mb-2">
+    <button type="button"
+            class="btn btn-sm btn-primary"
+            @onclick="@(() => ShowDialog = true)">
+        Open Dialog
+    </button>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Dialog Settings</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>HeaderTitle</label>
+                                <input type="text" @bind="HeaderTitle" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>Width</label>
+                                <input type="text" @bind="Width" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="mb-2">
+                                <label>MinWidth</label>
+                                <input type="text" @bind="MinWidth" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="mb-2">
+                                <label>MaxWidth</label>
+                                <input type="text" @bind="MaxWidth" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="mb-2">
+                                <label>Height</label>
+                                <input type="text" @bind="Height" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>MinHeight</label>
+                                <input type="text" @bind="MinHeight" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>MaxHeight</label>
+                                <input type="text" @bind="MaxHeight" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>PrimaryButtonText</label>
+                                <input type="text" @bind="PrimaryButtonText" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>SecondaryButtonText</label>
+                                <input type="text" @bind="SecondaryButtonText" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>OverlayBackgroundColor</label>
+                                <input type="color" @bind="OverlayBackgroundColor" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>HeaderBackgroundColor</label>
+                                <input type="color" @bind="HeaderBackgroundColor" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>PrimaryButtonColor</label>
+                                <input type="color" @bind="PrimaryButtonColor" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="mb-2">
+                                <label>SecondaryButtonColor</label>
+                                <input type="color" @bind="SecondaryButtonColor" class="form-control form-control-sm"/>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div>
+                                <label>DialogContent</label>
+                                <textarea type="color" class="form-control form-control-sm" style="height: 66px">@DialogContent</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-body">
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="ShowCloseButton"/>
+                        <label>ShowCloseButton</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="ShowHeader">
+                        <label>ShowHeader</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="ShowOverlay">
+                        <label>ShowOverlay</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="ShowFooter">
+                        <label>ShowFooter</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="DisablePrimaryButton">
+                        <label>DisablePrimaryButton</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="DisableSecondaryButton">
+                        <label>DisableSecondaryButton</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="ShowPrimaryButton">
+                        <label>ShowPrimaryButton</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" @bind="ShowSecondaryButton">
+                        <label>ShowSecondaryButton</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" @bind="DismissOnOverlayClick">
+                        <label>DismissOnOverlayClick</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<BlazorEasyDialog @bind-Visibility="ShowDialog"
+                  HeaderBackgroundColor="@HeaderBackgroundColor"
+                  PrimaryButtonText="@PrimaryButtonText"
+                  SecondaryButtonText="@SecondaryButtonText"
+                  ShowCloseButton="ShowCloseButton"
+                  ShowHeader="ShowHeader"
+                  ShowOverlay="ShowOverlay"
+                  ShowFooter="ShowFooter"
+                  PrimaryButtonColor="@PrimaryButtonColor"
+                  SecondaryButtonColor="@SecondaryButtonColor"
+                  DisablePrimaryButton="DisablePrimaryButton"
+                  DisableSecondaryButton="DisableSecondaryButton"
+                  ShowPrimaryButton="ShowPrimaryButton"
+                  ShowSecondaryButton="ShowSecondaryButton"
+                  DismissOnOverlayClick="DismissOnOverlayClick"
+                  OverlayBackgroundColor="@OverlayBackgroundColor"
+                  Width="@Width"
+                  MaxWidth="@MaxWidth"
+                  MinWidth="@MinWidth"
+                  Height="@Height"
+                  MinHeight="@MinHeight"
+                  MaxHeight="@MaxHeight"
+                  HeaderTitle="@HeaderTitle">
+    <DialogBody>
+        @DialogContent
+    </DialogBody>
+</BlazorEasyDialog>
