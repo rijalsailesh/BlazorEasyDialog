@@ -16,6 +16,7 @@
         <PackageReleaseNotes>No specific release notes provided for this version.</PackageReleaseNotes>
         <PackageIcon>BlazorEasyDialog.png</PackageIcon>
         <PackageOutputPath>D:\Nuget</PackageOutputPath>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
