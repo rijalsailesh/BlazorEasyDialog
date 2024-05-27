@@ -15,11 +15,11 @@ BlazorEasyDialog is a simple, JavaScript-free dialog component for Blazor applic
 **1. Add the nuget package in your Blazor project**
 
 ```bash
-  > dotnet add package BlazorDialog
+  > dotnet add package BlazorEasyDialog
   
   OR
   
-  PM> Install-Package BlazorDialog
+  PM> Install-Package BlazorEasyDialog
 ```
 **2. Add css link in head of index.html**
 
